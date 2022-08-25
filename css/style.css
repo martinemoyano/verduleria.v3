@@ -1,0 +1,71 @@
+
+
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form{
+    width: 400px;
+    max-width: 100%;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-contol{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid black;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-control small{
+    visibility: hidden;
+    bottom: 0px;
+    left: 0px;
+}
+
+.form-control.success input{
+    border: 2px solid rgb(94, 210, 94);
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-control.error input{
+    border: 2px solid red;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: red;
+}

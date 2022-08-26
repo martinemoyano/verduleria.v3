@@ -16,16 +16,51 @@ class Subscriptor
 
 let ArrayDeSubscriptores=[];
 
+
 VerificaryCargar();
+
+
 
 let botonRegistrar = document.getElementById("btnRegistrar")
 botonRegistrar.onclick = () =>{
 
-    let nombreIngresado = document.getElementById('txtNombreUsuario').value;
-    let claveIngresada = document.getElementById('txtClaveUsuario').value;
-    let emailIngresado = document.getElementById('txtEmailUsuario').value;
+    const nombreIngresado = document.getElementById('txtNombreUsuario').value.trim();
+    const claveIngresada = document.getElementById('txtClaveUsuario').value.trim();
+    const claveIngresada2 = document.getElementById('txtClaveUsuario2').value.trim();
+    const emailIngresado = document.getElementById('txtEmailUsuario').value.trim();
+
+
 
     /* validaciones */
+    verificarIngresos()
+
+function verificarIngresos(){
+    if (nombreIngresado === ""){
+        setErrorFor(nombreIngresado, "debe incluir un usuario");
+
+
+    }else{
+        setSuccessFor(nombreIngresado)
+    }
+
+    function setErrorFor(input, message){
+        const formControl = input.parentElement;
+        // const small = formControl.querySelector('small');
+
+        // small.innerText = message;
+        formControl.className = 'form-control error'
+    }
+    function setSuccessFor(input){
+        const formControl = input.parentElement;
+        formControl.className = 'form-control success'
+    }
+}
+
+//  borrar
+
+// fin validaciones
+
+
     let objGenerico={nombre : nombreIngresado , clave : claveIngresada , email:emailIngresado}
     ArrayDeSubscriptores.push(new Subscriptor(objGenerico));
 
@@ -38,6 +73,8 @@ function Guardar()
 {
     localStorage.setItem("ListadoSubscriptores",JSON.stringify( ArrayDeSubscriptores));
 }
+
+
 
 function VerificaryCargar()
 {
